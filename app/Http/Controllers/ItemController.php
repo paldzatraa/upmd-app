@@ -12,7 +12,7 @@ class ItemController extends Controller
     // 1. Tampilkan Daftar Alat
     public function index(Request $request)
     {
-        $categories = \App\Models\Category::all();
+        $categories = Category::all();
 
         $items = Item::with('category')
             ->when($request->search, function ($query) use ($request) {
