@@ -1,0 +1,10 @@
+/* 1. Import Font Google WAJIB paling atas */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* 2. Baru setelah itu import Tailwind */
+@import "tailwindcss";
+
+/* 3. Konfigurasi Theme */
+@theme {
+    --font-sans: "Montserrat", sans-serif;
+}
