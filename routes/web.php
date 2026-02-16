@@ -30,6 +30,17 @@ Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('l
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// ---> RUTE RAHASIA SETUP DATABASE RAILWAY <---
+Route::get('/setup-database', function () {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+        \Illuminate\Support\Facades\Artisan::call('storage:link');
+        return 'MANTAP! Tabel database dan folder foto berhasil dibuat! 🚀';
+    } catch (\Exception $e) {
+        return 'Yah, ada error: ' . $e->getMessage();
+    }
+});
+
 
 // ==========================================
 // 2. HALAMAN MEMBER (Harus Login)
