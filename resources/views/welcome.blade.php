@@ -20,7 +20,7 @@
 </head>
 <body class="font-sans antialiased h-screen w-full relative overflow-hidden">
 
-    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('img/bg.jpg') }}');">
+    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('img/bg.JPG') }}');">
         
         <div class="absolute inset-0 bg-[#003d79]/85 mix-blend-multiply"></div>
         
