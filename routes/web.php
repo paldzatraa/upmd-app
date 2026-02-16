@@ -41,6 +41,15 @@ Route::get('/setup-database', function () {
     }
 });
 
+// ---> RUTE RAHASIA SETUP ADMIN RAILWAY <---
+Route::get('/make-me-admin', function () {
+    $user = \App\Models\User::first();
+    if ($user) {
+        $user->update(['role' => 'admin']);
+        return 'BERHASIL! Akun ' . $user->name . ' sekarang resmi jadi Admin Utama UPMD 👑. Silakan kembali ke website dan refresh!';
+    }
+    return 'Gagal: Belum ada akun yang login/terdaftar di database.';
+});
 
 // ==========================================
 // 2. HALAMAN MEMBER (Harus Login)
